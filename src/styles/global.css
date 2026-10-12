@@ -1,0 +1,36 @@
+
+@import "tailwindcss";
+
+@font-face {
+  font-family: iMWriting;
+  src: url('../assets/fonts/iMWritingMonoNerdFont-Regular.ttf')
+}
+
+:root {
+  --color-foreground: oklch(0 0 0);
+  --color-foreground-s: oklch(0.2 0 0);
+  --color-background: oklch(1 0 0);
+
+  --font-primary: iMWriting;
+}
+
+:root.dark {
+  --color-foreground: oklch(1 0 0);
+  --color-foreground-s: oklch(0.8 0 0);
+  --color-background: oklch(0 0 0);
+}
+
+/* not using global cause it messes up with tailwind transition */
+body, div, h1, p {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+
+  font-family: var(--font-primary);
+}
+
+
+
